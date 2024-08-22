@@ -2,6 +2,8 @@
 
 Welcome to the Go Blog Project! This project demonstrates a simple blog application built with Go, using the Chi router and JSON file storage. The application features basic CRUD operations for articles, including create, read, update, and delete functionalities.
 
+#### Project URL: [https://roadmap.sh/projects/personal-blog](https://roadmap.sh/projects/personal-blog)
+
 ## Project Structure
 
 - `pkg/`: Contains the main application logic, including handlers and models.
