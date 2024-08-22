@@ -1,0 +1,44 @@
+{{define "base"}}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Macondo&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <title>{{template "title" .}} - Blog</title>
+  </head>
+  <body class="max-w-4xl mx-auto w-full px-4">
+    <header class="w-full h-16">
+      <h1 class="flex items-center justify-start h-full">
+        <a href="/" class="text-3xl font-bold">Personal Blog</a>
+      </h1>
+    </header>
+    <nav class="border-y h-8 text-sm">
+      <ul class="flex justify-start items-center gap-4 h-full font-medium">
+        <li class="hover:underline">
+          <a href="/">Home</a>
+        </li>
+        <li class="hover:underline">
+          <a href="/dashboard">Dashboard</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="min-h-[calc(100vh-8rem)] h-full py-5">
+      {{template "main" .}}
+    </main>
+    <footer
+      class="border-t h-8 flex items-center justify-center text-neutral-500 text-xs"
+    >
+      Build by Naman Agrawal
+    </footer>
+  </body>
+</html>
+{{ end }}

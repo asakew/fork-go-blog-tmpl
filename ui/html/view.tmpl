@@ -1,0 +1,13 @@
+{{define "title"}}Article: {{.Article.ID}}{{ end }}
+
+{{define "main"}}
+{{ with.Article }}
+<div class="flex flex-col gap-5">
+  <div class="flex flex-col items-start">
+    <h2 class="text-xl font-semibold">{{.Title}}</h2>
+    <p class="text-xs text-neutral-500">{{.PublishedDate | formatDate}}</p>
+  </div>
+  <p class="font-light text-neutral-600">{{.Content}}</p>
+</div>
+{{ end }}
+{{ end }}

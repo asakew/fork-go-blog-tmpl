@@ -1,0 +1,54 @@
+{{define "title"}}Create Article{{ end }}
+
+{{define "main"}}
+{{ with.Article }}
+<h1 class="mb-4 text-xl font-semibold">Update Article</h1>
+<form
+  action="/update/{{.ID}}"
+  method="POST"
+  class="border p-6 rounded-lg flex flex-col gap-4 items-start w-full"
+>
+  <div class="flex flex-col items-start w-full">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      required
+      placeholder="Article title"
+      value="{{.Title}}"
+      class="border rounded-lg w-1/2 h-8 text-sm font-light px-2 py-1 focus:outline-none focus:ring-1 focus:ring-neutral-500"
+    />
+  </div>
+  <div class="flex flex-col items-start w-full">
+    <label for="publishedDate">Publishing Date</label>
+    <input
+      type="date"
+      name="publishedDate"
+      id="publishedDate"
+      placeholder="Select date"
+      value="{{.PublishedDate | formatDate}}"
+      class="border cursor-pointer rounded-lg h-8 text-sm font-light px-2 py-1 focus:outline-none focus:ring-1 focus:ring-neutral-500"
+    />
+  </div>
+  <div class="flex flex-col items-start w-full">
+    <label for="content">Content</label>
+    <textarea
+      id="content"
+      name="content"
+      required
+      rows="8"
+      placeholder="Type your content here..."
+      class="border rounded-lg w-full text-sm font-light px-2 py-1 focus:outline-none focus:ring-1 focus:ring-neutral-500"
+      >{{.Content}}</textarea
+    >
+  </div>
+  <button
+    type="submit"
+    class="border px-4 py-2 rounded-md text-xs bg-neutral-900 text-white"
+  >
+    Update Article
+  </button>
+</form>
+{{ end }}
+{{ end }}
